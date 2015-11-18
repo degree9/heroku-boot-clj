@@ -9,7 +9,7 @@ in this repo and deployed to Docker Hub.
 ## Try It
 
 ```
-$ docker run -it degree9/heroku-boot-clj repl
+$ docker run -it degree9/heroku-boot-clj boot repl
 ```
 
 ## Extend It

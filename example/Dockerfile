@@ -1,7 +1,8 @@
-FROM adzerk/boot-clj:latest
+FROM degree9/heroku-boot-clj:latest
 
-ENV BOOT_VERSION=2.3.0
+ENV BOOT_VERSION=2.4.2
 
-RUN /usr/bin/boot web -s doesnt/exist repl -e '(System/exit 0)' && rm -rf target
+RUN boot build
 
-ENTRYPOINT ["/usr/bin/boot", "repl"]
+# this may work (untested)
+ONBUILD ENTRYPOINT ["/usr/bin/boot", "repl"]
