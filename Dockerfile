@@ -17,6 +17,6 @@ ENV BOOT_VERSION 2.4.2
 ENV BOOT_CLOJURE_VERSION 1.7.0
 
 # download & install deps, cache REPL and web deps
-RUN /usr/bin/boot web -s doesnt/exist repl -e '(System/exit 0)' && rm -rf target
+RUN /app/bin/boot web -s doesnt/exist repl -e '(System/exit 0)' && rm -rf target
 
 ENTRYPOINT ["/app/bin/boot"]
