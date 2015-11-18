@@ -2,6 +2,7 @@ FROM heroku/jvm
 
 # Install Boot
 
+RUN mkdir -p /app/bin
 RUN wget -O /app/bin/boot https://github.com/boot-clj/boot-bin/releases/download/2.4.2/boot.sh
 RUN chmod +x /app/bin/boot
 
