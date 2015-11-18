@@ -2,10 +2,8 @@ FROM heroku/jvm
 
 # Install Boot
 
-RUN apt-get update \
-    && apt-get install -y wget \
-    && wget -O /app/bin/boot https://github.com/boot-clj/boot-bin/releases/download/2.4.2/boot.sh \
-    && chmod +x /app/bin/boot
+RUN wget -O /app/bin/boot https://github.com/boot-clj/boot-bin/releases/download/2.4.2/boot.sh
+RUN chmod +x /app/bin/boot
 
 # Boot ENV
 
