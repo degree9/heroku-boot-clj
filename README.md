@@ -1,24 +1,23 @@
-# boot-clj-docker-image
+# heroku-boot-clj
 
-`adzerk/boot-clj` is a public Docker image that installs and sets up Oracle
-Java 8 and the latest version of [Boot][boot].
+`degree9/heroku-boot-clj` is a public Docker image that installs latest version of [Boot][boot] on top of the `heroku/jvm` image.
 
 This repo is set up as an [automated build][docker] on Docker Hub. The
-`adzerk/boot-clj` Docker image is automatically built from the _Dockerfile_
+`degree9/heroku-boot-clj` Docker image is automatically built from the _Dockerfile_
 in this repo and deployed to Docker Hub.
 
 ## Try It
 
 ```
-$ docker run -it adzerk/boot-clj repl
+$ docker run -it degree9/heroku-boot-clj repl
 ```
 
 ## Extend It
 
 To use as a base image for another _Dockerfile_, put this at the top of your
-_Dockerfile_: 
+_Dockerfile_:
 
-    FROM adzerk/boot-clj:latest
+    FROM degree9/heroku-boot-clj:latest
 
 ## Cache Maven Artifacts At Build Time
 
@@ -45,13 +44,13 @@ You can use any version of Boot with this image by specifying the
 
 _boot.properties_
 
-    BOOT_VERSION=2.3.0
-    BOOT_CLOJURE_VERSION=1.6.0
+    BOOT_VERSION=2.4.2
+    BOOT_CLOJURE_VERSION=1.7.0
 
 _Dockerfile_
 
-    ENV BOOT_VERSION=2.3.0
-    ENV BOOT_CLOJURE_VERSION=1.6.0
+    ENV BOOT_VERSION=2.4.2
+    ENV BOOT_CLOJURE_VERSION=1.7.0
 
 Environment variables set in the _Dockerfile_ will override settings in the
 _boot.properties_ file.
